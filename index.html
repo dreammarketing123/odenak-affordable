@@ -1,0 +1,293 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Odenak Affordable Housing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://use.typekit.net/ckv6xrd.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Sofia+Sans+Semi+Condensed:wght@400;500;600;700&display=swap">
+<style>
+@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactRegular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactRegularItalic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactMedium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactBold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+/* Layout: 1640px frame (hero/nav), 1364px reading column; red program band; cream and sand section bands. Single warm theme taken from the XD file. */
+:root{
+  --red:#923620; --cream:#fefaf6; --sand:#f5efe1; --tint:#e6dfcf; --ink:#1c1714;
+  --display:"freight-neo-pro","Cormorant Garamond",Georgia,serif;
+  --body:"PP Pangram Sans Compact","Sofia Sans Semi Condensed","Helvetica Neue",Arial,sans-serif;
+  --gutter:max(16px,env(safe-area-inset-left,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.band{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:1556px;margin-inline:auto}
+.col{max-width:1197px;margin-inline:auto}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.03em;text-wrap:balance;margin:0}
+.red{color:var(--red)}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:var(--cream)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:clamp(14px,1.8vw,30px);padding-inline:max(32px,calc(100vw - 1682px))}
+html{scroll-padding-top:clamp(70px,8vw,130px)}
+.brand{display:flex;align-items:center;gap:clamp(10px,1.4vw,22px);color:var(--red);text-decoration:none}
+.brand{--t:2.3vw}
+.brand .logo{height:calc(var(--t)*.7);width:auto}
+.brand span{font-family:var(--display);font-weight:500;font-size:var(--t);line-height:1;letter-spacing:.03em;white-space:nowrap}
+nav.main{display:flex;gap:clamp(16px,2.2vw,44px);flex-wrap:wrap}
+nav.main a{font-family:var(--display);font-weight:400;font-size:clamp(.9rem,1.15vw,1.375rem);letter-spacing:.03em;text-transform:uppercase;color:var(--red);text-decoration:none;padding-block:4px;border-bottom:1px solid transparent}
+nav.main a:hover{border-color:var(--red)}
+
+/* hero */
+.hero{margin-inline:max(32px,calc(100vw - 1682px));position:relative;aspect-ratio:1640/950;min-height:340px;overflow:hidden;background:#cdd9e6}
+.hero img,.hero video{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(20,12,8,.5),transparent)}
+.hero h1{position:absolute;z-index:1;left:clamp(18px,7.6vw,138px);bottom:clamp(20px,4.5vw,80px);right:16px;color:#FEFAF6;font-size:clamp(1.35rem,3.1vw,3.75rem);line-height:1.17;font-weight:500}
+
+/* sections */
+.sec{padding-block:clamp(48px,7vw,130px)}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.sec-title{font-size:clamp(1.9rem,2.6vw,3.125rem);line-height:1.2;color:var(--red);font-weight:400}
+.design-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:clamp(24px,6vw,110px);align-items:start;margin-bottom:clamp(24px,3vw,52px)}
+.design-head p,.copy p{margin:0 0 1.1em;max-width:68ch}
+.design-head p{font-size:clamp(1rem,1vw,1.125rem)}
+.design-img{width:100%;aspect-ratio:1364/885;object-fit:cover}
+
+.living{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;align-items:end}
+.living .copy p{font-size:clamp(1rem,1.04vw,1.25rem);line-height:1.5;max-width:none}
+.living img{width:100%;aspect-ratio:752/900;object-fit:cover}
+@media(min-width:880px){.living{grid-template-columns:minmax(0,1fr) minmax(0,min(660px,34.4vw));gap:clamp(32px,3.2vw,64px)}.living .copy{padding-bottom:0}}
+
+/* carousels */
+.sand{background:var(--sand)}
+.lead{font-size:clamp(1rem,1.05vw,1.25rem);max-width:78ch;margin:clamp(14px,1.6vw,28px) 0 clamp(26px,3vw,56px)}
+.rail{display:flex;gap:clamp(14px,1.6vw,30px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scroll-padding-inline:max(16px,env(safe-area-inset-left,0px));-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+@media(min-width:1500px){.rail{margin-inline:calc(-1 * (100vw - 1197px)/2);padding-inline:calc((100vw - 1197px)/2);scroll-padding-inline:calc((100vw - 1197px)/2)}}
+.rail figure{margin:0;flex:0 0 clamp(250px,26vw,500px);scroll-snap-align:start}
+.rail.wide figure{flex-basis:clamp(280px,30vw,600px)}
+.rail img{width:100%;aspect-ratio:500/380;object-fit:cover}
+.rail.wide img{aspect-ratio:600/420}
+.rail figcaption{margin-top:12px;font-size:1rem}
+.rail figcaption h3{font-size:clamp(1.3rem,1.9vw,2.25rem);text-transform:none;letter-spacing:0;color:var(--red);font-weight:400;margin-bottom:6px}
+.rail figcaption p{margin:0;font-size:.95rem;max-width:42ch}
+.arrows{display:flex;gap:18px;margin-top:26px}
+.arrows button{width:34px;height:34px;border-radius:50%;border:1px solid var(--red);background:transparent;color:var(--red);display:grid;place-items:center;cursor:pointer;padding:0;transition:background .2s,color .2s}
+.arrows button.on,.arrows button:hover{background:var(--red);color:var(--cream)}
+.arrows svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6}
+.suite-text p{margin:0 0 1.2em}
+
+/* program */
+.program{background:var(--red);color:var(--tint);padding-block:clamp(48px,6vw,110px)}
+.program h2{text-align:center;font-size:2.6vw;color:var(--tint);font-weight:400;margin-bottom:clamp(30px,4vw,80px)}
+.acc{border-top:1px solid rgba(230,223,207,.6)}
+.acc details{border-bottom:1px solid rgba(230,223,207,.6)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(18px,2vw,36px) clamp(8px,1.4vw,26px)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary h3{font-size:clamp(1.25rem,2.1vw,2.5rem);font-weight:400;color:var(--tint)}
+.acc summary i{flex:none;width:18px;height:18px;position:relative}
+.acc summary i::before,.acc summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--tint)}
+.acc summary i::after{transform:rotate(90deg);transition:transform .25s}
+.acc details[open] summary i::after{transform:rotate(0)}
+.acc .body{padding:0 clamp(8px,1.4vw,26px) clamp(24px,2.6vw,44px);font-size:clamp(.95rem,1vw,1.125rem);max-width:none}
+.acc .body p{margin:0 0 1.1em;max-width:105ch}
+.acc .body ol{margin:0 0 1.1em;padding-left:1.4em}
+.acc .body h4{font-family:var(--body);font-weight:500;font-size:clamp(1.05rem,1.35vw,1.6rem);margin:1.6em 0 .5em;color:#FEFAF6;letter-spacing:.01em}
+.acc .body h4:first-child{margin-top:0}
+.acc .body .sub{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.1rem,1.6vw,1.9rem);letter-spacing:.03em;margin:0 0 .9em;font-weight:400;color:var(--tint)}
+.acc .fine{font-style:italic;margin-top:1.4em}
+.tbl{overflow-x:auto;margin:1.4em 0}
+table{border-collapse:collapse;width:100%;min-width:640px;background:var(--tint);color:var(--red);text-align:center;font-size:clamp(.85rem,.95vw,1.05rem)}
+th,td{padding:clamp(10px,1.1vw,18px) clamp(8px,1vw,20px)}
+th{font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.3}
+td{font-weight:500}
+tbody tr:first-child td{padding-top:clamp(14px,1.6vw,28px)}
+td:first-child,th:first-child{width:34%}
+
+.program .intro{max-width:1100px;margin:0 auto clamp(28px,3.5vw,60px);padding-inline:clamp(8px,1.4vw,26px);font-size:clamp(.95rem,1vw,1.125rem)}
+.program .intro p{margin:0 0 1.1em}
+.acc .body ul{margin:0 0 1.1em;padding-left:1.2em}.acc .body li{margin-bottom:.2em}
+.acc .body ul+h4{margin-top:1.4em}
+.tbl{max-width:760px;margin-inline:auto}
+table{min-width:520px;background:var(--cream)}
+tbody tr:nth-child(even) td{background:var(--tint)}
+.apply{display:flex;justify-content:center;margin-top:clamp(30px,3.5vw,64px)}
+.btn{display:inline-block;background:var(--tint);color:var(--red);font-family:var(--body);font-weight:500;font-size:clamp(1rem,1.15vw,1.375rem);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:.85em 2.4em;transition:background .2s,color .2s}
+.btn:hover{background:var(--cream)}
+/* legal */
+.legal{padding-block:clamp(48px,6vw,110px)}
+.legal h2{font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(1.3rem,1.6vw,1.875rem);margin-bottom:12px}
+.legal p{margin:0 0 1em;font-size:clamp(.95rem,1vw,1.125rem);max-width:1200px}
+.legal section+section{margin-top:clamp(28px,3.5vw,60px)}
+
+/* footer */
+footer{background:var(--red);color:#FEFAF6;padding-block:clamp(40px,5vw,96px) clamp(40px,4.5vw,80px)}
+.foot{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:760px){.foot{grid-template-columns:auto auto 1fr;gap:clamp(40px,5vw,96px)}.foot .touch{text-align:right}.foot .touch .soc{justify-content:flex-end}}
+footer .logo{width:clamp(100px,8vw,140px);height:auto;margin-bottom:clamp(20px,3vw,54px);color:#FEFAF6}
+footer h4{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:.03em;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:.95rem}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+footer p{margin:0;font-size:.95rem;line-height:1.75}
+.soc{display:flex;gap:14px;margin-top:14px}.soc svg{width:20px;height:20px;fill:#FEFAF6}
+.foot .brandcell{grid-column:1/-1}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* v3 overrides: qualification section in white, smaller type, simpler table */
+.program{color:#FEFAF6}
+.program h2,.acc summary h3,.acc .body h4,.acc .body .sub{color:#FEFAF6}
+.acc,.acc details{border-color:rgba(254,250,246,.6)}
+.acc summary i::before,.acc summary i::after{background:#FEFAF6}
+.program .intro,.acc .body{font-size:max(14px,.9vw)}
+.acc .body h4{font-size:max(16px,1.1vw)}
+.btn{background:#FEFAF6;color:var(--red)}.btn:hover{background:var(--tint)}
+.tbl{width:max(72%,min(100%,560px));max-width:none;margin-inline:auto}
+.tbl:focus{outline:none}
+.program table{background:var(--tint);color:var(--red);font-size:max(14px,.9vw)}
+.program tbody tr:nth-child(even) td{background:transparent}
+.program th,.program td{padding:max(10px,.7vw) 1vw}
+.program tbody tr:first-child td{padding-top:max(12px,.9vw)}
+.legal p{font-size:max(14px,.9vw)}
+.legal h2{font-size:max(16px,1.1vw)}
+footer .wrap{padding-inline:max(32px,calc(100vw - 1682px))}
+/* v4: accordion spacing and table to match the XD */
+.acc .body{padding-top:max(14px,.9vw)}
+.acc .body p,.acc .body ul,.acc .body ol{max-width:1100px}
+.acc .fine{margin-top:0}
+.acc .tbl{margin:max(20px,1.9vw) auto max(20px,2vw)}
+.program table{line-height:1.4}
+.program th,.program td{padding:max(11px,.8vw) 1vw}
+.program tbody tr:first-child td{padding-top:max(11px,.8vw)}
+.program thead th{padding-bottom:max(11px,.8vw)}
+</style>
+</head><body>
+<header class="top band"><div class="wrap bar">
+  <a class="brand" href="#top" aria-label="Odenak Rental Living"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0.0 -139.8 122.0 33.8" fill="currentColor" role="img" aria-label="Odenak"><path transform="translate(39.11 -139.82)" d="M -29.64213562011719 0 C -36.41095733642578 0 -39.1089973449707 7.456039905548096 -39.1089973449707 16.92314338684082 C -39.1089973449707 26.43914222717285 -36.41095733642578 33.84580612182617 -29.64213562011719 33.84580612182617 C -22.87307357788086 33.84580612182617 -20.12589263916016 26.43914222717285 -20.12589263916016 16.92314338684082 C -20.12589263916016 7.456039905548096 -22.87307357788086 0 -29.64213562011719 0 M -29.64213562011719 32.75119018554688 C -32.78145217895508 32.75119018554688 -33.86057281494141 23.74134635925293 -33.86057281494141 16.92314338684082 C -33.86057281494141 10.00642108917236 -32.78145217895508 1.094611048698425 -29.64213562011719 1.094611048698425 C -26.45343399047852 1.094611048698425 -25.37431526184082 10.00642108917236 -25.37431526184082 16.92314338684082 C -25.37431526184082 23.74134635925293 -26.45343399047852 32.75119018554688 -29.64213562011719 32.75119018554688"/><path transform="translate(100.78 -133.42)" d="M -42.90905380249023 -4.444539070129395 L -51.4439697265625 -4.433161735534668 L -56.54521942138672 -4.433161735534668 L -56.54521942138672 -5.863999366760254 L -42.90905380249023 -5.863999366760254 L -42.90905380249023 -4.444539070129395 Z M -56.61299514770508 26.85379028320312 L -42.90905380249023 26.85379028320312 L -42.90905380249023 25.35517501831055 L -47.42208099365234 25.42294883728027 L -51.4439697265625 25.42294883728027 L -51.4439697265625 10.50651359558105 L -43.27626419067383 10.50651359558105 L -43.27626419067383 9.075434684753418 L -51.4439697265625 9.075434684753418 L -51.4439697265625 -0.3575388193130493 L -56.54521942138672 -0.3565704822540283 L -56.54521942138672 22.34099578857422 L -56.61299514770508 26.85379028320312 Z"/><path transform="translate(132.80 -139.28)" d="M -54.17956924438477 0 L -55.61064529418945 0 L -55.6007194519043 28.76004600524902 L -65.92303466796875 0.0004841269983444363 L -70.05191802978516 0.0004841269983444363 L -70.05191802978516 0 L -71.48300170898438 0 L -71.47161865234375 32.7177848815918 L -70.05191802978516 32.7177848815918 L -70.05191802978516 3.354273796081543 L -59.48171997070312 32.71850967407227 L -54.17956924438477 32.71875381469727 L -54.18005752563477 32.7177848815918 L -54.17956924438477 32.7177848815918 L -54.17956924438477 0 Z"/><path transform="translate(174.43 -139.28)" d="M -55.08454895019531 0 L -58.11590576171875 4.717333316802979 L -67.50772857666016 19.35249137878418 L -67.50772857666016 0 L -72.677001953125 0 L -72.60946655273438 4.512789249420166 L -72.677001953125 32.7180290222168 L -67.50772857666016 32.7180290222168 L -67.50772857666016 21.98178482055664 L -53.38356399536133 0 L -55.08454895019531 0 Z M -63.429443359375 21.98662948608398 L -58.21345520019531 32.7180290222168 L -52.42741394042969 32.7180290222168 L -60.1436767578125 16.90498733520508 L -63.429443359375 21.98662948608398 Z"/><path transform="translate(152.84 -4.12)" d="M -53.9908447265625 -102.4457092285156 L -59.53602981567383 -135.1640014648438 L -63.67119979858398 -135.1640014648438 L -64.66729736328125 -135.1640014648438 L -65.12698364257812 -135.1640014648438 L -71.23400115966797 -102.4457092285156 L -69.79032135009766 -102.4457092285156 L -68.11355590820312 -111.4102935791016 L -64.25288391113281 -111.4102935791016 L -60.76886367797852 -111.4153747558594 L -59.29614639282227 -102.4457092285156 L -53.9908447265625 -102.4457092285156 Z M -67.84558868408203 -112.8413848876953 L -64.20180511474609 -132.3267517089844 L -61.0026969909668 -112.8413848876953 L -67.84558868408203 -112.8413848876953 Z"/><path transform="translate(53.29 -139.28)" d="M -23.09507942199707 0 L -30.47100067138672 0 L -30.40346527099609 4.512789249420166 L -30.40346527099609 19.02498054504395 L -30.40346527099609 27.21786117553711 L -25.30221557617188 27.21786117553711 L -25.30221557617188 19.02498054504395 L -25.30221557617188 1.045714378356934 L -23.09507942199707 1.045714378356934 C -19.51423454284668 1.045714378356934 -17.89531326293945 8.976682662963867 -17.89531326293945 16.38382530212402 C -17.89531326293945 19.54202842712402 -18.09767913818359 22.20884132385254 -18.55832672119141 24.36877059936523 C -18.60552787780762 24.51328468322754 -18.65006828308105 24.70185279846191 -18.68904113769531 24.94633674621582 C -19.0235710144043 26.30697631835938 -19.47211456298828 27.44661140441895 -20.05234146118164 28.35943222045898 C -20.0758228302002 28.3964672088623 -20.09881782531738 28.43350410461426 -20.12253952026367 28.47078132629395 C -21.24135589599609 30.02459144592285 -22.22873306274414 30.48886680603027 -22.83897399902344 30.78030776977539 C -22.94693756103516 30.82194709777832 -23.06070709228516 30.86260986328125 -23.17883491516113 30.90279197692871 C -24.42642974853516 31.2695198059082 -27.05862808227539 31.28694915771484 -27.05862808227539 31.28694915771484 L -30.40346527099609 31.28694915771484 L -30.40346527099609 32.7180290222168 L -26.35761070251465 32.7180290222168 L -23.04594039916992 32.7180290222168 C -14.56258392333984 32.7180290222168 -12.64689445495605 25.85068702697754 -12.64689445495605 16.38382530212402 C -12.64689445495605 7.01475715637207 -15.68793678283691 0 -23.09507942199707 0"/></svg><span>RENTAL LIVING</span></a>
+  <nav class="main" aria-label="Primary"><a href="#affordable">Affordable Housing Program</a><a href="#amenities">About Odenak</a><a href="#qualification">Qualification</a></nav>
+</div></header>
+<div class="wrap">
+<div class="hero" id="top"><video autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-label="Aerial view of the two Odenak towers beside the Ottawa River"><source src="video/odenak-hero.mp4" type="video/mp4"></video><h1>Odenak Affordable Housing Program</h1></div>
+</div>
+
+<section class="sec" id="affordable"><div class="col">
+  <div class="design-head">
+    <h2 class="sec-title">Affordable<br>Design</h2>
+    <div class="copy"><p>Odenak is creating a community designed to be more accessible, diverse and welcoming with 41% of units offered below market rent. The affordable design strategy supports people who have historically faced barriers to adequate housing, including Indigenous Peoples, veterans, newcomers, refugees, adults with cognitive disabilities, and women and children.</p></div>
+  </div>
+  <img class="design-img" src="images/design.jpg" alt="Odenak podium and tower at dusk" loading="lazy">
+</div></section>
+
+<section class="sec" id="about" style="padding-top:0"><div class="col">
+  <div class="living">
+    <div class="copy"><h2 class="sec-title" style="margin-bottom:clamp(14px,1.6vw,28px)">Affordable Living<br>at Odenak</h2><p>Ideally positioned along the Confederation LRT Line and nestled at the river’s edge, Odenak offers seamless access to everything the capital has to offer. Two distinct residences — Odenak East and West — deliver a thoughtfully curated collection of studios to three-bedroom suites, featuring refined interiors, modern finishes, and amenities designed around the way you live. More than just a place to call home, Odenak is a vibrant mixed-use community built for connection — to the city, to your neighbours, and to a sustainable future.</p></div>
+    <img src="images/living.jpg" alt="Aerial view of Odenak East and West" loading="lazy">
+  </div>
+</div></section>
+
+<section class="band sand sec" id="amenities"><div class="col">
+  <h2 class="sec-title">Amenities</h2>
+  <p class="lead">At Odenak, every space has been designed with your lifestyle in mind. From fully equipped gyms and coworking lounges to terraced community gardens, outdoor BBQ terraces, and a one-of-a-kind community bike shop — life here goes well beyond your suite. Thoughtfully crafted gathering spaces, a dedicated kids’ club, and programming designed to bring residents together makes Odenak a place you’ll truly want to come home to.</p>
+  <div class="rail" id="r1" tabindex="0" aria-label="Amenities gallery">
+    <figure><img src="images/fitness.jpg" alt="Fitness centre" loading="lazy"><figcaption>Fitness Centre</figcaption></figure>
+    <figure><img src="images/garden.jpg" alt="Community garden terrace" loading="lazy"><figcaption>Community Garden</figcaption></figure>
+    <figure><img src="images/bike.jpg" alt="Bike repair shop" loading="lazy"><figcaption>Bike Repair Shop</figcaption></figure>
+    <figure><img src="images/party.jpg" alt="Party and game room" loading="lazy"><figcaption>Party &amp; Game Room</figcaption></figure>
+    <figure><img src="images/kids.jpg" alt="Kids room" loading="lazy"><figcaption>Kids Room</figcaption></figure>
+    <figure><img src="images/cowork.jpg" alt="Co-working lounge" loading="lazy"><figcaption>Co-working Lounge</figcaption></figure>
+    <figure><img src="images/lobby.jpg" alt="Lobby" loading="lazy"><figcaption>Lobby</figcaption></figure>
+  </div>
+  <div class="arrows" data-for="r1"><button type="button" class="prev" aria-label="Previous"><svg viewBox="0 0 16 16"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button><button type="button" class="next on" aria-label="Next"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+</div></section>
+
+<section class="sec" id="suites"><div class="col">
+  <h2 class="sec-title">Suite Features</h2>
+  <div class="lead suite-text"><p>Every Odenak suite is finished with quality materials and elevated details you’ll notice from the moment you walk in. Choose from two curated palettes each bringing its own warmth and character to your home. Wood-look flooring flows throughout, complemented by quartz countertops, porcelain tile, and a full suite of stainless-steel appliances. In-suite laundry make everyday living effortless.</p><p>Odenak is committed to meeting its obligations under the Ontario Human Rights Code and the Accessibility for Ontarians with Disabilities Act (AODA). Reasonable accommodation requests will be considered throughout the application process.</p></div>
+  <div class="rail wide" id="r2" tabindex="0" aria-label="Suite features">
+    <figure><img src="images/suite1.jpg" alt="Bright living room with large windows" loading="lazy"><figcaption><h3>Light-Filled Suites</h3><p>Soaring 9-foot ceilings and oversized windows fill every suite with natural light, creating bright, airy spaces that feel open and elevated.</p></figcaption></figure>
+    <figure><img src="images/suite2.jpg" alt="Open kitchen and dining area" loading="lazy"><figcaption><h3>Great Kitchens</h3><p>Full-size appliances meet quartz countertops and stainless steel finishes in kitchens built for real living — as beautiful for entertaining as they are practical for everyday meals.</p></figcaption></figure>
+    <figure><img src="images/suite3.jpg" alt="Living and dining space with skyline views" loading="lazy"><figcaption><h3>Unmatched Views</h3><p>Wake up to sweeping views of Parliament, the capital skyline, and the Ottawa River — a daily reminder that at Odenak, you’re not just living in the city, you’re living above it.</p></figcaption></figure>
+  </div>
+  <div class="arrows" data-for="r2"><button type="button" class="prev" aria-label="Previous"><svg viewBox="0 0 16 16"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button><button type="button" class="next on" aria-label="Next"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+</div></section>
+
+<section class="band program" id="qualification"><div class="col">
+  <h2>Program Details &amp; Eligibility</h2>
+  <div class="intro">
+    <p>As part of the screening process, you will be required to demonstrate your household income does not exceed the maximum income limits, in addition to meeting other screening requirements.</p>
+    <p>Submission of an application does not guarantee eligibility, approval, selection, tenancy, or a specific unit type. All applications are subject to verification of information, program eligibility requirements, unit availability, and landlord screening criteria.</p>
+    <p>Due to anticipated demand, application review times may vary. Eligible applicants will be contacted if selected to proceed to the next stage of the screening process.</p>
+  </div>
+  <div class="acc">
+    <details><summary><h3>Priority Applicant Groups</h3><i></i></summary><div class="body">
+      <p>Priority consideration may be given to households that fall within National Housing Strategy (NHS) Priority Populations in accordance with applicable funding requirements. Membership within a priority population does not guarantee selection or tenancy.</p>
+      <ol><li>Women and children</li><li>Indigenous groups</li><li>Veterans</li><li>Newcomers/recent immigrants</li><li>Adults with cognitive disabilities</li></ol></div></details>
+    <details><summary><h3>Income-Based Eligibility</h3><i></i></summary><div class="body">
+      <p>Applicants must declare all income, benefits, and assets as part of the application.</p>
+      <p>To qualify, a household’s income must fall within the income parameters established for the Affordable Housing Program and applicable Canada Mortgage and Housing Corporation (CMHC) requirements.</p>
+      <p>To determine eligibility, add together the Line 23600 income from the most recent Canada Revenue Agency (CRA) Notice of Assessment for all household members aged 16 and older.</p>
+      <p>Applicants must provide satisfactory documentation to verify household income, household composition, residency status, and program eligibility. Odenak reserves the right to request additional documentation at any stage of the application process.</p>
+      <p>Any false, incomplete, or misleading information may result in the rejection of an application or termination of eligibility under the Affordable Housing Program. Odenak reserves the right to reject, cancel, or withdraw an application or offer if information is found to be false, misleading, incomplete, or fraudulent.</p></div></details>
+    <details><summary><h3>Affordable Rental Rates &amp; Income Limits</h3><i></i></summary><div class="body">
+      <p>The table below outlines the current maximum household income limits and corresponding affordable rental rates for each suite type available through the Odenak Affordable Housing Program. Before applying, please review the income limits below to ensure your household qualifies for your preferred suite type.</p>
+      <div class="tbl"><table><thead><tr><th>Unit Type</th><th>Annual Household Income</th><th>Monthly Base Rent</th></tr></thead><tbody>
+        <tr><td>1 Bedroom</td><td>$82,320</td><td>$1,372</td></tr>
+        <tr><td>1 Bedroom + Den</td><td>$82,320</td><td>$1,372</td></tr>
+        <tr><td>2 Bedroom</td><td>$104,100</td><td>$1,735</td></tr>
+        <tr><td>3 Bedroom</td><td>$104,280</td><td>$1,738</td></tr>
+        <tr><td>3 Bedroom + Den</td><td>$104,280</td><td>$1,738</td></tr></tbody></table></div>
+      <p class="fine">Affordable rents are established in accordance with Canada Mortgage and Housing Corporation (CMHC) Median Market Rent (MMR) and Average Market Rent (AMR) guidelines. Eligibility is subject to household income verification and program requirements. Rental rates and income limits may change in accordance with applicable program guidelines.</p>
+      <p class="fine">The Affordable Housing Program is supported through the National Housing Strategy and administered in accordance with applicable CMHC funding requirements. Continued eligibility and rental rates may be subject to changes arising from legislation, government policy, CMHC requirements, funding agreements, or regulatory directives.</p></div></details>
+    <details><summary><h3>Frequently Asked Questions</h3><i></i></summary><div class="body">
+      <h4>Before You Apply</h4>
+      <ul><li>Household income must be below the applicable income limit.</li><li>Priority consideration may be given to certain applicant groups.</li><li>Utilities and parking are not included.</li></ul>
+      <h4>What’s Included In Your Monthly Rent?</h4>
+      <ul><li>In-suite laundry</li><li>Access to building amenities</li><li>Professional on-site property management</li></ul>
+      <h4>What’s Not Included In Your Monthly Rent?</h4>
+      <ul><li>Hydro Ottawa</li><li>Lebreton Community Utility (heating and cooling) charges</li><li>Internet and telecommunication services</li><li>Storage lockers</li><li>Optional resident services</li></ul>
+      <h4>Is Parking Available?</h4><p>Parking will not be available. The community is located steps from Pimisi Station and offers convenient access to public transit, cycling infrastructure, and active transportation routes.</p>
+      <h4>Do I Qualify If My Income Is Below The Limit?</h4><p>Meeting the income requirements does not guarantee approval or unit availability.</p>
+      <h4>How Is Household Income Calculated?</h4><p>Income is based on Line 23600 of the CRA Notice of Assessment for all household members aged 16 and older.</p>
+      <h4>How Much Can My Rent Be Increased Annually?</h4><p>Rent increases, if applicable, will be implemented in accordance with the Residential Tenancies Act, 2006, applicable Affordable Housing Program requirements, and any obligations contained within governing funding agreements.</p>
+      <h4>Occupancy Standards</h4><p>Household occupancy must comply with applicable program requirements, municipal standards, and Odenak occupancy policies in effect at the time of application and occupancy.</p>
+      <h4>Waitlist And Selection Process</h4>
+      <p>Where the number of eligible applicants exceeds available units, Odenak may maintain a waitlist or use a selection process consistent with program requirements and applicable funding agreements.</p>
+      <p>Eligibility for the Affordable Housing Program does not guarantee the availability of a particular unit type, floor plan, building location, view, orientation, or move-in date.</p>
+      <p>Odenak reserves the right to refuse any application that does not meet program requirements, eligibility criteria, occupancy standards, or applicable funding restrictions.</p>
+      <h4>Principal Residence Requirement</h4><p>Approved applicants must occupy the rental unit as their principal residence and may be required to certify continued occupancy from time to time.</p></div></details>
+  </div>
+  <div class="apply"><a class="btn" href="#">Start Apply</a></div>
+</div></section>
+
+<section class="legal"><div class="col">
+  <section><h2>Privacy &amp; Consent</h2>
+    <p>Personal information collected through the Affordable Housing Program application process is collected solely for the purpose of determining eligibility, administering the program, verifying information, and complying with applicable legal, funding, and reporting obligations. Information will be handled in accordance with applicable privacy legislation.</p>
+    <p>Applicants consent to the collection, use, verification, and disclosure of information necessary to administer the Affordable Housing Program, including disclosure to government agencies, funding partners, auditors, or service providers where required by law or funding obligations. Odenak may engage third-party service providers to collect, store, process, or verify application information in accordance with applicable privacy legislation and contractual confidentiality obligations.</p></section>
+  <section><h2>Disclaimer</h2>
+    <p>The information provided on this page is for informational purposes only and is subject to change without notice. Rental rates, income thresholds, eligibility criteria, unit availability, specifications, amenities, and program requirements may be modified as required by applicable legislation, funding agreements, or operational requirements.</p>
+    <p>Renderings, photographs, amenity descriptions, suite features, and community programming are conceptual or representative only and may be modified, substituted, delayed, or discontinued without notice. In the event of any inconsistency between the information provided on this website and applicable legislation, funding agreements, program guidelines, or lease documents, those requirements shall prevail.</p></section>
+</div></section>
+
+<footer class="band"><div class="wrap">
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0.0 -139.8 122.0 33.8" fill="currentColor" role="img" aria-label="Odenak"><path transform="translate(39.11 -139.82)" d="M -29.64213562011719 0 C -36.41095733642578 0 -39.1089973449707 7.456039905548096 -39.1089973449707 16.92314338684082 C -39.1089973449707 26.43914222717285 -36.41095733642578 33.84580612182617 -29.64213562011719 33.84580612182617 C -22.87307357788086 33.84580612182617 -20.12589263916016 26.43914222717285 -20.12589263916016 16.92314338684082 C -20.12589263916016 7.456039905548096 -22.87307357788086 0 -29.64213562011719 0 M -29.64213562011719 32.75119018554688 C -32.78145217895508 32.75119018554688 -33.86057281494141 23.74134635925293 -33.86057281494141 16.92314338684082 C -33.86057281494141 10.00642108917236 -32.78145217895508 1.094611048698425 -29.64213562011719 1.094611048698425 C -26.45343399047852 1.094611048698425 -25.37431526184082 10.00642108917236 -25.37431526184082 16.92314338684082 C -25.37431526184082 23.74134635925293 -26.45343399047852 32.75119018554688 -29.64213562011719 32.75119018554688"/><path transform="translate(100.78 -133.42)" d="M -42.90905380249023 -4.444539070129395 L -51.4439697265625 -4.433161735534668 L -56.54521942138672 -4.433161735534668 L -56.54521942138672 -5.863999366760254 L -42.90905380249023 -5.863999366760254 L -42.90905380249023 -4.444539070129395 Z M -56.61299514770508 26.85379028320312 L -42.90905380249023 26.85379028320312 L -42.90905380249023 25.35517501831055 L -47.42208099365234 25.42294883728027 L -51.4439697265625 25.42294883728027 L -51.4439697265625 10.50651359558105 L -43.27626419067383 10.50651359558105 L -43.27626419067383 9.075434684753418 L -51.4439697265625 9.075434684753418 L -51.4439697265625 -0.3575388193130493 L -56.54521942138672 -0.3565704822540283 L -56.54521942138672 22.34099578857422 L -56.61299514770508 26.85379028320312 Z"/><path transform="translate(132.80 -139.28)" d="M -54.17956924438477 0 L -55.61064529418945 0 L -55.6007194519043 28.76004600524902 L -65.92303466796875 0.0004841269983444363 L -70.05191802978516 0.0004841269983444363 L -70.05191802978516 0 L -71.48300170898438 0 L -71.47161865234375 32.7177848815918 L -70.05191802978516 32.7177848815918 L -70.05191802978516 3.354273796081543 L -59.48171997070312 32.71850967407227 L -54.17956924438477 32.71875381469727 L -54.18005752563477 32.7177848815918 L -54.17956924438477 32.7177848815918 L -54.17956924438477 0 Z"/><path transform="translate(174.43 -139.28)" d="M -55.08454895019531 0 L -58.11590576171875 4.717333316802979 L -67.50772857666016 19.35249137878418 L -67.50772857666016 0 L -72.677001953125 0 L -72.60946655273438 4.512789249420166 L -72.677001953125 32.7180290222168 L -67.50772857666016 32.7180290222168 L -67.50772857666016 21.98178482055664 L -53.38356399536133 0 L -55.08454895019531 0 Z M -63.429443359375 21.98662948608398 L -58.21345520019531 32.7180290222168 L -52.42741394042969 32.7180290222168 L -60.1436767578125 16.90498733520508 L -63.429443359375 21.98662948608398 Z"/><path transform="translate(152.84 -4.12)" d="M -53.9908447265625 -102.4457092285156 L -59.53602981567383 -135.1640014648438 L -63.67119979858398 -135.1640014648438 L -64.66729736328125 -135.1640014648438 L -65.12698364257812 -135.1640014648438 L -71.23400115966797 -102.4457092285156 L -69.79032135009766 -102.4457092285156 L -68.11355590820312 -111.4102935791016 L -64.25288391113281 -111.4102935791016 L -60.76886367797852 -111.4153747558594 L -59.29614639282227 -102.4457092285156 L -53.9908447265625 -102.4457092285156 Z M -67.84558868408203 -112.8413848876953 L -64.20180511474609 -132.3267517089844 L -61.0026969909668 -112.8413848876953 L -67.84558868408203 -112.8413848876953 Z"/><path transform="translate(53.29 -139.28)" d="M -23.09507942199707 0 L -30.47100067138672 0 L -30.40346527099609 4.512789249420166 L -30.40346527099609 19.02498054504395 L -30.40346527099609 27.21786117553711 L -25.30221557617188 27.21786117553711 L -25.30221557617188 19.02498054504395 L -25.30221557617188 1.045714378356934 L -23.09507942199707 1.045714378356934 C -19.51423454284668 1.045714378356934 -17.89531326293945 8.976682662963867 -17.89531326293945 16.38382530212402 C -17.89531326293945 19.54202842712402 -18.09767913818359 22.20884132385254 -18.55832672119141 24.36877059936523 C -18.60552787780762 24.51328468322754 -18.65006828308105 24.70185279846191 -18.68904113769531 24.94633674621582 C -19.0235710144043 26.30697631835938 -19.47211456298828 27.44661140441895 -20.05234146118164 28.35943222045898 C -20.0758228302002 28.3964672088623 -20.09881782531738 28.43350410461426 -20.12253952026367 28.47078132629395 C -21.24135589599609 30.02459144592285 -22.22873306274414 30.48886680603027 -22.83897399902344 30.78030776977539 C -22.94693756103516 30.82194709777832 -23.06070709228516 30.86260986328125 -23.17883491516113 30.90279197692871 C -24.42642974853516 31.2695198059082 -27.05862808227539 31.28694915771484 -27.05862808227539 31.28694915771484 L -30.40346527099609 31.28694915771484 L -30.40346527099609 32.7180290222168 L -26.35761070251465 32.7180290222168 L -23.04594039916992 32.7180290222168 C -14.56258392333984 32.7180290222168 -12.64689445495605 25.85068702697754 -12.64689445495605 16.38382530212402 C -12.64689445495605 7.01475715637207 -15.68793678283691 0 -23.09507942199707 0"/></svg>
+  <div class="foot">
+    <div><h4>Links</h4><ul><li><a href="#top">Homepage</a></li><li><a href="#about">About</a></li><li><a href="#about">Neighbourhood</a></li><li><a href="#suites">Suites</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#top">Events</a></li><li><a href="#top">Retail</a></li><li><a href="#top">Schedule A Tour</a></li></ul></div>
+    <div><h4>Hours</h4><p>Monday - Tuesday: Closed<br>Wednesday - Friday: 12pm - 5pm<br>Saturday - Sunday: Closed</p></div>
+    <div class="touch"><h4>Get in Touch</h4><p>Contact Us<br>Email: hello@odenak.ca<br>Phone: (123) 456-7890</p>
+      <div class="soc"><svg viewBox="0 0 24 24" aria-label="Facebook" role="img"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2C16.700 2.100 15.800 2 14.700 2 12.300 2 10.700 3.500 10.700 6.100V8H8v3.300h2.700V22H14V11.300h2.600L17 8h-3z"/></svg><svg viewBox="0 0 24 24" aria-label="Instagram" role="img"><path d="M12 7.200A4.800 4.800 0 1 0 12 16.800 4.800 4.800 0 0 0 12 7.200zm0 7.900A3.100 3.100 0 1 1 12 8.900a3.100 3.100 0 0 1 0 6.200zM17.200 5.800a1.100 1.100 0 1 0 0 2.200 1.100 1.100 0 0 0 0-2.200zM12 3.800c2.500 0 2.800 0 3.800.1 2.600.1 3.800 1.300 3.900 3.900.1 1 .1 1.300.1 3.800s0 2.800-.1 3.800c-.1 2.600-1.300 3.800-3.900 3.900-1 .1-1.300.1-3.800.1s-2.800 0-3.800-.1c-2.600-.1-3.800-1.300-3.900-3.900-.1-1-.1-1.300-.1-3.800s0-2.800.1-3.800C4.400 5.200 5.600 4 8.200 3.900c1-.1 1.300-.1 3.800-.1zM12 2.100c-2.500 0-2.900 0-3.900.1C4.700 2.300 2.400 4.600 2.300 8.100c-.1 1-.1 1.400-.1 3.900s0 2.900.1 3.900c.2 3.500 2.400 5.800 5.900 5.900 1 .1 1.400.1 3.900.1s2.900 0 3.900-.1c3.500-.2 5.800-2.400 5.900-5.900.1-1 .1-1.400.1-3.900s0-2.900-.1-3.900c-.2-3.500-2.400-5.800-5.900-5.900-1-.1-1.400-.1-3.900-.1z"/></svg></div></div>
+  </div>
+</div></footer>
+
+<script>
+(function(){var v=document.querySelector(".hero video");if(v&&window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause()}})();
+document.querySelectorAll('.arrows').forEach(function(a){
+  var r=document.getElementById(a.dataset.for),p=a.querySelector('.prev'),n=a.querySelector('.next');
+  function step(d){var f=r.querySelector('figure');r.scrollBy({left:d*(f.getBoundingClientRect().width+24),behavior:'smooth'})}
+  function upd(){p.classList.toggle('on',r.scrollLeft>8);n.classList.toggle('on',r.scrollLeft+r.clientWidth<r.scrollWidth-8)}
+  p.onclick=function(){step(-1)};n.onclick=function(){step(1)};r.addEventListener('scroll',upd,{passive:true});upd();
+  r.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+});
+</script>
+</body></html>
