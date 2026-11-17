@@ -6,10 +6,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Sofia+Sans+Semi+Condensed:wght@400;500;600;700&display=swap">
 <style>
-@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactRegular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactRegularItalic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactMedium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"PP Pangram Sans Compact";src:url("fonts/PPPangramSans-CompactBold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("font/fonts/PPPangramSans-CompactRegular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("font/fonts/PPPangramSans-CompactRegularItalic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("font/fonts/PPPangramSans-CompactMedium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Pangram Sans Compact";src:url("font/fonts/PPPangramSans-CompactBold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 /* Layout: 1640px frame (hero/nav), 1364px reading column; red program band; cream and sand section bands. Single warm theme taken from the XD file. */
 :root{
   --red:#923620; --cream:#fefaf6; --sand:#f5efe1; --tint:#e6dfcf; --ink:#1c1714;
@@ -43,8 +43,9 @@ nav.main a{font-family:var(--display);font-weight:400;font-size:clamp(.9rem,1.15
 nav.main a:hover{border-color:var(--red)}
 
 /* hero */
-.hero{margin-inline:max(32px,calc(100vw - 1682px));position:relative;aspect-ratio:1640/950;min-height:340px;overflow:hidden;background:#cdd9e6}
-.hero img,.hero video{width:100%;height:100%;object-fit:cover;display:block}
+.hero{container-type:size;background:#cdd9e6 url(images/hero-poster.jpg) center/cover no-repeat;margin-inline:max(32px,calc(100vw - 1682px));position:relative;aspect-ratio:1640/950;min-height:340px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero video{width:100%;height:100%;object-fit:cover;display:block}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(20,12,8,.5),transparent)}
 .hero h1{position:absolute;z-index:1;left:clamp(18px,7.6vw,138px);bottom:clamp(20px,4.5vw,80px);right:16px;color:#FEFAF6;font-size:clamp(1.35rem,3.1vw,3.75rem);line-height:1.17;font-weight:500}
 
@@ -162,6 +163,8 @@ footer .wrap{padding-inline:max(32px,calc(100vw - 1682px))}
 .program th,.program td{padding:max(11px,.8vw) 1vw}
 .program tbody tr:first-child td{padding-top:max(11px,.8vw)}
 .program thead th{padding-bottom:max(11px,.8vw)}
+.vctl{position:absolute;z-index:2;right:clamp(14px,2vw,32px);bottom:clamp(14px,2vw,32px);width:40px;height:40px;border-radius:50%;border:1px solid rgba(254,250,246,.8);background:rgba(20,12,8,.35);color:#FEFAF6;display:grid;place-items:center;cursor:pointer;padding:0}
+.vctl:hover{background:rgba(20,12,8,.6)}.vctl svg{width:16px;height:16px;fill:currentColor}
 </style>
 </head><body>
 <header class="top band"><div class="wrap bar">
@@ -169,7 +172,7 @@ footer .wrap{padding-inline:max(32px,calc(100vw - 1682px))}
   <nav class="main" aria-label="Primary"><a href="#affordable">Affordable Housing Program</a><a href="#amenities">About Odenak</a><a href="#qualification">Qualification</a></nav>
 </div></header>
 <div class="wrap">
-<div class="hero" id="top"><video autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-label="Aerial view of the two Odenak towers beside the Ottawa River"><source src="video/odenak-hero.mp4" type="video/mp4"></video><h1>Odenak Affordable Housing Program</h1></div>
+<div class="hero" id="top"><video autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-label="Aerial view of the two Odenak towers beside the Ottawa River"><source src="media/odenak-hero.mp4" type="video/mp4"><source src="odenak-hero.mp4" type="video/mp4"><source src="Video/odenak-hero.mp4" type="video/mp4"></video><button class="vctl" type="button" aria-label="Pause video"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="pp" d="M4 3h3v10H4zM9 3h3v10H9z"/></svg></button><h1>Odenak Affordable Housing Program</h1></div>
 </div>
 
 <section class="sec" id="affordable"><div class="col">
@@ -281,7 +284,12 @@ footer .wrap{padding-inline:max(32px,calc(100vw - 1682px))}
 </div></footer>
 
 <script>
-(function(){var v=document.querySelector(".hero video");if(v&&window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause()}})();
+(function(){var v=document.querySelector(".hero video"),b=document.querySelector(".vctl");if(!v)return;
+var pp=b.querySelector(".pp"),PAUSE="M4 3h3v10H4zM9 3h3v10H9z",PLAY="M4 2.5v11l9-5.5z";
+function sync(){var p=v.paused;pp.setAttribute("d",p?PLAY:PAUSE);b.setAttribute("aria-label",p?"Play video":"Pause video")}
+v.addEventListener("play",sync);v.addEventListener("pause",sync);
+var t=v.play();if(t&&t.catch)t.catch(function(){sync()});
+b.addEventListener("click",function(){v.paused?v.play():v.pause()});sync()})();
 document.querySelectorAll('.arrows').forEach(function(a){
   var r=document.getElementById(a.dataset.for),p=a.querySelector('.prev'),n=a.querySelector('.next');
   function step(d){var f=r.querySelector('figure');r.scrollBy({left:d*(f.getBoundingClientRect().width+24),behavior:'smooth'})}
